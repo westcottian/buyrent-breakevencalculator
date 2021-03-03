@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option go_package = "github.com/westcottian/buyrent-breakeven/proto";
+
+message Property {
+  int64 propertyID = 1;
+  int64 totalPropertyCost = 2;
+  int64 stayTerm = 3;
+}
+message BuyProperty {
+  double downPayment = 1;
+  double interestRate = 2;
+  double propertyTaxes = 3;
+  double propertyTransferTaxes = 4;
+  int64 loanTerm = 5;
+}
+
+message RentProperty {
+  int32 monthlyRent = 2;
+}
+
+message BreakEvenRequest {
+  Property p = 1;
+  BuyProperty b = 2;
+  RentProperty r = 3;;
+}
+
+message BreakEvenResponse {
+  string result = 1;
+  bool isBreakEven = 2;
+}
+
+service BreakEvenService {
+  rpc CalculatePropertyBreakEven(BreakEvenRequest) returns (BreakEvenResponse) {}
+}
