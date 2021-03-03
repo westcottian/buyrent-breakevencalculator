@@ -2,21 +2,21 @@ package grpc
 
 import (
 	"github.com/westcottian/buyrent-breakevencalculator/domain"
-	pb "github.com/westcottian/buyrent-breakevencalculator/proto/buyrent-breakevencalculator"
+	pbbr "github.com/westcottian/buyrent-breakevencalculator/pb"
 )
 
 type CalculatorServiceServerImpl struct {
 	calculatorServiceServer domain.BreakEvenService
 }
 
-func NewCalculatorServer(service domain.BreakEvenService) pb.BreakEvenServiceServer {
+func NewCalculatorServer(service domain.BreakEvenService) pbbr.BreakEvenServiceServer {
 	return &CalculatorServiceServerImpl{
 		calculatorServiceServer: service,
 	}
 }
 
 // ComputePropertyBreakEven calls the core service's ComputePropertyBreakEven method and maps the result to a grpc service response.
-func (c *CalculatorServiceServerImpl) CalculatePropertyBreakEven(ctx context.Context, req *pb.BreakEvenRequest) (*pb.BreakEvenResponse, error) {
+func (c *CalculatorServiceServerImpl) CalculatePropertyBreakEven(ctx context.Context, req *pbbr.BreakEvenRequest) (*pbbr.BreakEvenResponse, error) {
 	//Get the request params and validate them.
 	params := domain.BuyRentCalculator{}
 

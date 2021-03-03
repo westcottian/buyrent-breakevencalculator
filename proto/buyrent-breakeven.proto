@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "buyrent-breakevencalculator/pb";
+option go_package = ".;buyrent_breakeven";
 
 message Property {
   int64 propertyID = 1;

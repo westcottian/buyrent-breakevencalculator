@@ -2,7 +2,7 @@ package grpc
 
 import (
 	"github.com/westcottian/buyrent-breakevencalculator/domain"
-	pb "github.com/westcottian/buyrent-breakevencalculator/proto/buyrent-breakevencalculator"
+	pbbr "github.com/westcottian/buyrent-breakevencalculator/pb"
 	gRPC "google.golang.org/grpc"
 )
 
@@ -17,7 +17,7 @@ func newServer(calculatorService domain.BreakEvenService) (*gRPC.Server, error) 
 
 	// Initialize calculator server and register it to the gRPC server.
 	calculatorServer := NewCalculatorServer(calculatorService)
-	pb.RegisterBreakEvenServiceServer(calculatorServer)
+	pbbr.RegisterBreakEvenServiceServer(calculatorServer)
 
 	return grpcServer, nil
 }
