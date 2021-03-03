@@ -10,6 +10,7 @@ import (
 	"syscall"
 
 	"github.com/westcottian/buyrent-breakevencalculator/buyrentcalculator"
+	"github.com/westcottian/buyrent-breakevencalculator/di"
 	"github.com/westcottian/buyrent-breakevencalculator/grpc"
 )
 
@@ -30,7 +31,8 @@ func main() {
 // (DB or external services) and logger and pass it to the server struct.
 // nolint: gocyclo, funlen
 func realMain(_ []string) int {
-
+	c := di.NewContainer()
+	env := c.InjectConfig()
 	// configure our calculator service
 	calculatorService := buyrentcalculator.NewService()
 

@@ -17,7 +17,7 @@ func newServer(calculatorService domain.BreakEvenService) (*gRPC.Server, error) 
 
 	// Initialize calculator server and register it to the gRPC server.
 	calculatorServer := NewCalculatorServer(calculatorService)
-	pbbr.RegisterBreakEvenServiceServer(calculatorServer)
+	pbbr.RegisterBreakEvenServiceServer(grpcServer, calculatorServer)
 
 	return grpcServer, nil
 }

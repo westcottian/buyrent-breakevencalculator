@@ -3,7 +3,6 @@ package config
 import (
 	"github.com/kelseyhightower/envconfig"
 	"github.com/pkg/errors"
-	"go.uber.org/zap/zapcore"
 )
 
 const (

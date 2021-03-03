@@ -12,6 +12,5 @@ type service struct {
 func NewService() domain.BreakEvenService {
 	return &service{
 		data: domain.Result{},
-	},
-
+	}
 }

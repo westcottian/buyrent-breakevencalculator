@@ -1,4 +1,4 @@
-module buyrent-breakevencalculator
+module github.com/westcottian/buyrent-breakevencalculator
 
 go 1.14
 
@@ -7,7 +7,6 @@ require (
 	github.com/golang/protobuf v1.4.3 // indirect
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/pkg/errors v0.9.1
-	github.com/westcottian/buyrent-breakevencalculator v0.0.0-20210303174501-794c28eed3b3
 	go.uber.org/zap v1.16.0
 	golang.org/x/net v0.0.0-20210226172049-e18ecbb05110 // indirect
 	golang.org/x/sync v0.0.0-20201020160332-67f06af15bc9

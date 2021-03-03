@@ -1,6 +1,7 @@
 package grpc
 
 import (
+	"context"
 	"github.com/westcottian/buyrent-breakevencalculator/domain"
 	pbbr "github.com/westcottian/buyrent-breakevencalculator/pb"
 )
@@ -20,17 +21,11 @@ func (c *CalculatorServiceServerImpl) CalculatePropertyBreakEven(ctx context.Con
 	//Get the request params and validate them.
 	params := domain.BuyRentCalculator{}
 
-	err := c.calculatorServiceServer.CalculatePropertyBreakEven(params)
+	_, err := c.calculatorServiceServer.CalculatePropertyBreakEven(params)
 	if err != nil {
 		return nil, err
 	}
-
-	/*result = &appgrpc.BreakEvenResponse{
-		Rent:     res.Rent,
-		Purchase: res.Purchase,
-		Message:  res.Message,
-		Verdict:  res.Verdict,
-	}*/
+	//Todo
 
 	return nil, nil
 }
