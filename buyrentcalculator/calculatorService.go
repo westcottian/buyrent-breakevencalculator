@@ -11,6 +11,7 @@ type service struct {
 // NewService instantiates a new Service.
 func NewService() domain.BreakEvenService {
 	return &service{
-		data: domain.BuyRentCalculator{},
-	}
+		data: domain.Result{},
+	},
+
 }

@@ -12,6 +12,12 @@ type BuyRentCalculator struct {
 	MonthlyRent           int64
 }
 
+//Result is the break even analysis response object
+type Result struct {
+	Message string
+	option  string
+}
+
 type BreakEvenService interface {
-	CalculatePropertyBreakEven(req BuyRentCalculator) (err error)
+	CalculatePropertyBreakEven(req BuyRentCalculator) (Result, error)
 }
