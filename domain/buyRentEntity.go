@@ -1,7 +1,5 @@
 package domain
 
-import "errors"
-
 type BuyRentCalculator struct {
 	PropertyID            int64
 	TotalPropertyCost     int64
@@ -15,5 +13,5 @@ type BuyRentCalculator struct {
 }
 
 type BreakEvenService interface {
-	CalculatePropertyBreakEven(req BuyRentCalculator) (err errors)
+	CalculatePropertyBreakEven(req BuyRentCalculator) (err error)
 }

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/westcottian/buyrent-breakeven/proto";
+option go_package = "buyrent-breakevencalculator/pb";
 
 message Property {
   int64 propertyID = 1;
