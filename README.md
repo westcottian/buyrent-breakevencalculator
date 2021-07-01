@@ -1,2 +1,2 @@
 # buyrent-breakevencalculator
-gRPC to find the break even of a property.
+gRPC endpoint to find the break even calculator of a property.
